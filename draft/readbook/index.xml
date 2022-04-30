@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>读书小记 on zggz Book</title>
+    <link>https://zggz.github.io/draft/readbook/</link>
+    <description>Recent content in 读书小记 on zggz Book</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://zggz.github.io/draft/readbook/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浏览器渲染</title>
+      <link>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Wed, 25 Nov 2020 18:14:05 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;主要描述浏览器的渲染&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hash和history的差异</title>
+      <link>https://zggz.github.io/draft/readbook/hash_history/</link>
+      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/hash_history/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;浏览器导航&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>https://zggz.github.io/draft/readbook/http/</link>
+      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/http/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;http 相关的基本概念&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>浏览器缓存</title>
+      <link>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a href=&#34;https://m.html.cn/top/14214.html&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用户行为对缓存的影响&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;用户操作&lt;/th&gt;
+&lt;th&gt;Expires/Cache-Control&lt;/th&gt;
+&lt;th&gt;Last-Modied/Etag&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;地址栏回车&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;页面链接跳转&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;新开窗口&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;前进回退&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F5刷新&lt;/td&gt;
+&lt;td&gt;无效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl+F5强制刷新&lt;/td&gt;
+&lt;td&gt;无效&lt;/td&gt;
+&lt;td&gt;无效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>简单设计模式</title>
+      <link>https://zggz.github.io/draft/readbook/design-pattern/</link>
+      <pubDate>Tue, 06 Oct 2020 11:47:42 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/design-pattern/</guid>
+      <description>&lt;p&gt;简单学习相关设计模式（大话设计模式），以下是概念描述；具体实例参考&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>函数式编程</title>
+      <link>https://zggz.github.io/draft/readbook/function/</link>
+      <pubDate>Thu, 25 Jun 2020 12:31:44 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/function/</guid>
+      <description>&lt;h1 id=&#34;函数式编程&#34;&gt;
+  函数式编程
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%87%bd%e6%95%b0%e5%bc%8f%e7%bc%96%e7%a8%8b&#34;&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;使用函数来抽象作用在数据之上的控制流与操作，从而在系统中消除副作用并减少对状态的改变
+函数式编程指创建不可变的程序，通过消除外部可见的副作用，来对纯函数的声明式的求值过程&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

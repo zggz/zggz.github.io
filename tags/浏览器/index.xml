@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>浏览器 on zggz Book</title>
+    <link>https://zggz.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+    <description>Recent content in 浏览器 on zggz Book</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 19 Nov 2020 00:18:12 +0000</lastBuildDate><atom:link href="https://zggz.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hash和history的差异</title>
+      <link>https://zggz.github.io/draft/readbook/hash_history/</link>
+      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/hash_history/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;浏览器导航&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>浏览器缓存</title>
+      <link>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;
+  Introduction
+  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a href=&#34;https://m.html.cn/top/14214.html&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用户行为对缓存的影响&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;用户操作&lt;/th&gt;
+&lt;th&gt;Expires/Cache-Control&lt;/th&gt;
+&lt;th&gt;Last-Modied/Etag&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;地址栏回车&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;页面链接跳转&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;新开窗口&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;前进回退&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F5刷新&lt;/td&gt;
+&lt;td&gt;无效&lt;/td&gt;
+&lt;td&gt;有效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl+F5强制刷新&lt;/td&gt;
+&lt;td&gt;无效&lt;/td&gt;
+&lt;td&gt;无效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

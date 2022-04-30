@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>性能 on zggz Book</title>
+    <link>https://zggz.github.io/tags/%E6%80%A7%E8%83%BD/</link>
+    <description>Recent content in 性能 on zggz Book</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Feb 2019 11:17:51 +0000</lastBuildDate><atom:link href="https://zggz.github.io/tags/%E6%80%A7%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>算法和流程控制</title>
+      <link>https://zggz.github.io/draft/high-javascript/process-control/</link>
+      <pubDate>Wed, 06 Feb 2019 11:17:51 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/high-javascript/process-control/</guid>
+      <description>循环类型 #  // for循环 for(var i = 0; i&amp;lt;items.length; i++){} // while循环 var i= 0; while(i&amp;lt;items.length){} // do-while var j = 10 ; do{}while(j&amp;lt;items.length) // for-in for(var key in object){  // 函数体 }  // 每次循环所经历的步骤 1. 在控制条件中查找一次属性(items.length) 2. 在控制条件中执行一次数值比较(i&amp;lt;items.length) 3. 一次比较操作,查看控制条件的计算是否为true(i&amp;lt;items.length === true) 4. 一次自增(i++) 5. 一次数值查找(items[i]) 6. 一次函数体执行 减少迭代的工作量 #   for-in循环每次迭代都需要搜索实例和原型,因此每次迭代会带来更多的开销，对比同等次数和环境for-in循环最终只有其他循环类型的1/7 2.由于操作局部变量和字面量要比查找对象成员和数组项的查找要快，对于数组或者对象来说length一般是没有改变的所有通过缓存局部变量可以提高性能   // 大多数浏览器可以节约25%的时间，IE甚至可以节约50%  for(var i = 0;len = item.length i&amp;lt;len; i++){} 3.</description>
+    </item>
+    
+    <item>
+      <title>数据存取</title>
+      <link>https://zggz.github.io/draft/high-javascript/data/</link>
+      <pubDate>Fri, 01 Feb 2019 16:47:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/high-javascript/data/</guid>
+      <description>作用域链 #  每一个javascript函数都可以表示为一个对象，更确切的说，是Function对象的一个实例，拥有可以编程访问的属性和一系列不能访问的内部属性，其中一个是[[Scope]]。内部属性[[scope]]包含了一个函数被创建作用域中对象的集合，那么这个集合被称为作用域链，它决定了那些能被函数访问。
+当函数被执行时会创建一个执行环境，每个执行环境都有自己的作用域，用于解析标识符，在函数的执行中每遇到一个变量都会经历一次标识符解析，会持续的在作用域链中去搜索匹配这个对象，正是这个过程影响了性能，正是由于标识符的解析过程，所以出现同名的变量那么第二个会覆盖第一个变量。
+局部变量 #  由于全局变量会在最远处，所以最好使用局部变量会更快。 由于很多全局变量比如document等，通过在函数局部声明变量来承载，会提高性能
+function test(){  links = document.getElementByTagName(&amp;#39;a&amp;#39;)  document.getElementById(&amp;#39;click&amp;#39;).onClick = function(){   }  // 以上的案例会搜索全局变量document两次  var dc = document  links = dc.getElementByTagName(&amp;#39;a&amp;#39;)  dc.getElementById(&amp;#39;click&amp;#39;).onClick = function(){   }  // 以上案例智慧搜索一次全局变量document，解析标识符的路径会更短 } 闭包 #  由于在闭包存在的情况下，执行环境无法被销毁，也就是说会消耗更多的内存。在使用闭包的情况下会创建一个执行环境与属性[[scope]]中所引用的相同作用域对象一起被初始化；在闭包中用到的标识符，位于作用域链的第一个作用域之后，在频繁的跨作用域访问标识符，会带来性能损耗
+对象成员 #  javascript是基于原型。原型是对象的基础；对象通过内部属性_proto_绑定其成员变量。当函数或者对象读取或者执行的时候，会在当前实例搜索变量，没有则继续搜索原型对象，可以通过hasOwnProperty、in操作符来判断当前实例是否具有该属性或者方法。正是这个逐级搜索的过程严重的拖慢了访问成员变量的时间
+1. 嵌套成员:对象中包含其他对象，例如window.location.href每次遇到点操作符，嵌套成员会导致javascript引擎搜索所有对象成员，嵌套的越深读取速度就越慢，执行location.href总会比window.location.href要快。（在大部分浏览器中点操作和括号表示法没有明显的区别，只有Safari中点操作始终比括号表示法更快）
+2. 缓存对象成员:在同一函数中没必要多次读取同一个对象成员。通常来说在函数中需要多次读取一个对象属性，最佳做法是局部变量缓存，降低多次查找带来的开销，特别是在处理嵌套成员的时候。不要再同一函数下多次查找一个对象，除非这个对象值变化了
+小结 #   访问字面量和局部变量速度最快，访问数组和对象成员相对会慢 局部变量处于顶端起始位置会比跨作用域访问更快；而全局变量处于作用域末端，访问速度最慢 避免使用with，它会改变执行环境的作用域链；try-catch中的catch也会改变执行环境作用域链，因此需要小心使用 嵌套成员明显影响性能，尽可能少用 通常来说使用缓存变量到函数的局部环境，会改善javascript性能  </description>
+    </item>
+    
+    <item>
+      <title>加载与执行</title>
+      <link>https://zggz.github.io/draft/high-javascript/load-and-execute/</link>
+      <pubDate>Thu, 31 Jan 2019 15:20:48 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/high-javascript/load-and-execute/</guid>
+      <description>概述 #  多数浏览器使用单一进程来处理用户界面（UI）刷新和javascript脚本的执行，所以同一时间只能做一件事，js执行时间越久，浏览器等待响应时间就越长。script标签的每次出现，页面会等待脚本的解析和执行；不管是和内联好还是外链，页面的下载和渲染都必须等待脚本 的执行。这个过程中的页面交互式完全阻塞的。
+脚本位置 script标签位置 #   浏览器在解析到body标签之前不会渲染任何页面，如果把脚本放在顶部，通常表现为页面空白 每个脚本必须等到前一个脚本下载完成、执行完成才会开始下载和执行；瀑布图中显示的下载间隔刚好是前一个脚本的执行时间   结论：推荐将所有的&amp;lt;script&amp;gt;标签尽可能的放到标签的底部，以尽量减少对整个页面下载的影响  组织脚本 #   由于每个&amp;lt;script&amp;gt;标签的初始下载都会阻塞页面的渲染，减少页面包含的&amp;lt;script&amp;gt;标签有利于改善性能； 考虑到http的网络消耗，下载单个100k会比4个25k要快同时浏览器解析html页面每遇到一个脚本标签，都会因为执行脚本导致一定的延迟，因此脚本的数量也需要限制。 （Steve Souders）把内联的脚本放在&amp;lt;link&amp;gt;标签之后,也会导致页面阻塞去等待样式表的下载。（目的：确保内嵌脚本在执行时能或得最精准的样式信息），建议永远不需要把内嵌脚本放在&amp;lt;link&amp;gt;标签之后 脚本合并：通常将多个文件合并成一个文件下载，比如Yahoo的合并处理器  1.静态资源打包：服务器将多个文件合并成一个文件 &amp;lt;script src=&amp;#34;http://a.tbcdn.cn/??s/kissy/1.1.6/kissy-min.js,p/global/1.0/global-min.js,p/et/et.js?t=2011092320110301.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 针对上面这个案例，那么服务器端你在这个请求的接口里，根据js参数的值，把a.js到e.js的内容读取出来，再合并成一个文件（一般同时还会压缩，比如去空格，比如缩短变量名等），输出到客户端。如果服务器端再加上缓存，那可能连合并都不需要了。这样页面加载速度会快非常多。比较常用的js打包工具有google的google closure，css用yui compressor。 无阻塞脚本 #  核心在于页面加载完成后才加载javascript代码，意味着window对象的load事件触发后在加载脚本
+ 并行下载&amp;lt;script&amp;gt;标签在下载外部资源不会阻塞其他的&amp;lt;script&amp;gt;标签。虽然脚本的下载过程不会相互影响，但是页面仍然会等待所有的脚本下载并执行才能继续。 扩展属性（共同点都是并行下载）  defer:（html4）指明本元素所包含的脚本不会修改dom，代码可以安全的延迟执行（只有IE支持），该属性会在并行下载后等待页面完成后执行；任何带有defer属性的javascript文件下载时，它不会阻塞浏览器的其他进程，因此这类文件可以与页面其他资源并行下载(仅当src属性声明时才生效) sync:（html5）加载完成后自动执行     动态脚本元素 #  动态添加脚本元素到页面，使用动态脚本下载，返回的代码通常会立即执行
+function loadScript(url,callback){  var script = document.createElement(&amp;#39;script&amp;#39;)  script.type = &amp;#39;text/javascript&amp;#39;  if(script.readyState){  // 兼容IE  script.onreadystatechange = function(){  if(script.</description>
+    </item>
+    
+  </channel>
+</rss>

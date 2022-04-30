@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>katex on zggz Book</title>
+    <link>https://zggz.github.io/categories/katex/</link>
+    <description>Recent content in katex on zggz Book</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 26 Feb 2019 23:28:00 +0000</lastBuildDate><atom:link href="https://zggz.github.io/categories/katex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于latex格式的前端渲染</title>
+      <link>https://zggz.github.io/draft/katex/</link>
+      <pubDate>Tue, 26 Feb 2019 23:28:00 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/draft/katex/</guid>
+      <description>&lt;p&gt;最近由于工作原因开始接触laex格式的渲染，主要是相关复杂公式的渲染数学公式、物理公式等；渲染方式主要有服务端渲染展示图片、前端渲染html形式展示公式；这里只说说前端渲染前的方式。以前也没有接触过类似的东西通过调研多个库，主要有MathJax、katex的渲染方式；这里主要讲katex的渲染方式。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

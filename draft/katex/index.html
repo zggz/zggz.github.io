@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="最近由于工作原因开始接触laex格式的渲染，主要是相关复杂公式的渲染数学公式、物理公式等；渲染方式主要有服务端渲染展示图片、前端渲染html形式展示公式；这里只说说前端渲染前的方式。以前也没有接触过类似的东西通过调研多个库，主要有MathJax、katex的渲染方式；这里主要讲katex的渲染方式。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="关于latex格式的前端渲染" />
+<meta property="og:description" content="最近由于工作原因开始接触laex格式的渲染，主要是相关复杂公式的渲染数学公式、物理公式等；渲染方式主要有服务端渲染展示图片、前端渲染html形式展示公式；这里只说说前端渲染前的方式。以前也没有接触过类似的东西通过调研多个库，主要有MathJax、katex的渲染方式；这里主要讲katex的渲染方式。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zggz.github.io/draft/katex/" /><meta property="article:section" content="draft" />
+<meta property="article:published_time" content="2019-02-26T23:28:00+00:00" />
+<meta property="article:modified_time" content="2022-04-30T11:56:44+08:00" />
+
+<title>关于latex格式的前端渲染 | zggz Book</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.bda3e609fa4804070f9c6206b392325ed2bd2127f933b6910405fc8f8a5c0f75.js" integrity="sha256-vaPmCfpIBAcPnGIGs5IyXtK9ISf5M7aRBAX8j4pcD3U=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.gif" alt="Logo" /><span>zggz Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>一些杂记</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/notes/vim/" class="">vim常用命令</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/notes/git/" class="">Git</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        其他
+      </a>
+  </li>
+  
+  <li>
+    <a href="/draft/readbook/" >
+        读书小记
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>关于latex格式的前端渲染</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是latex">什么是latex？</a></li>
+    <li><a href="#mathjax">MathJax</a>
+      <ul>
+        <li><a href="#引入mathjax">引入MathJax</a></li>
+        <li><a href="#更多">更多</a></li>
+      </ul>
+    </li>
+    <li><a href="#katex-最快的公式渲染">katex 最快的公式渲染</a>
+      <ul>
+        <li><a href="#引入katex">引入katex</a></li>
+        <li><a href="#api">API</a>
+          <ul>
+            <li><a href="#katexrender">katex.render</a></li>
+            <li><a href="#katexrendertostring">katex.renderToString</a></li>
+            <li><a href="#rendermathinelement">renderMathInElement</a></li>
+          </ul>
+        </li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>最近由于工作原因开始接触laex格式的渲染，主要是相关复杂公式的渲染数学公式、物理公式等；渲染方式主要有服务端渲染展示图片、前端渲染html形式展示公式；这里只说说前端渲染前的方式。以前也没有接触过类似的东西通过调研多个库，主要有MathJax、katex的渲染方式；这里主要讲katex的渲染方式。</p>
+<h1 id="什么是latex">
+  什么是latex？
+  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%aflatex">#</a>
+</h1>
+<p>摘自维基百科</p>
+<table><tr><td bgcolor=#eef0f4>LaTeX， 是一种基于TEX的排版系统，由美国电脑学家莱斯利·兰伯特在20世纪80年代初期开发，利用这种格式，即使用户没有排版和程序设计的知识也可以充分发挥由TEX所提供的强大功能，能在几天，甚至几小时内生成很多具有书籍质量的印刷品。对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</td></tr></table>
+简单的说
+<table><tr><td bgcolor=#eef0f4>LaTeX 基于 TeX，主要目的是为了方便排版。在学术界的论文，尤其是数学、计算机等学科论文都是由 LaTeX 编写, 因为用它写数学公式非常漂亮。</td></tr></table>
+<h1 id="mathjax">
+  MathJax
+  <a class="anchor" href="#mathjax">#</a>
+</h1>
+<p>MathJax的<a href="https://www.mathjax.org/">官网地址</a>，中文文档地址点<a href="https://mathjax-chinese-doc.readthedocs.io/en/latest/index.html">这里</a></p>
+<h2 id="引入mathjax">
+  引入MathJax
+  <a class="anchor" href="#%e5%bc%95%e5%85%a5mathjax">#</a>
+</h2>
+<p>官网cdn</p>
+<table><tr><td bgcolor=#eeffcc>&lt;script type="text/javascript" src="http://cdn.mathjax.org/mathjax/1.1-latest/MathJax.js"&gt;&lt;/script&gt;</td></tr></table>
+因为MathJax是自动识别dom的，引入成功之后如果包含latex格式的标签会自动转换比如：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;∵集合$$A=\left\{ x|x&amp;lt;{}1 \right.$$或$$\left. x&amp;gt;3 \right\}$$，$$B=\left\{ x|2x-4&amp;gt;0 \right\}=\left\{ x|x&amp;gt;2 \right\}$$，&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><!-- 渲染的结果是：![加载失败](/images/math.png) -->
+<p>与此同时官方也给我们提供了配置函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- type必须是text/x-mathjax-config --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/x-mathjax-config&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showProcessingMessages</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">//关闭js加载过程信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">messageStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;none&#34;</span>, <span style="color:#75715e">//不显示信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">jax</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;input/TeX&#34;</span>, <span style="color:#e6db74">&#34;output/HTML-CSS&#34;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tex2jax</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">由于MathJax</span> <span style="color:#a6e22e">没有css</span> <span style="color:#a6e22e">所以有些时候会出现样式不对</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">注意设置好</span> <span style="color:#a6e22e">inlineMath</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">displayMath</span> <span style="color:#a6e22e">属性</span><span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#34;$&#34;</span>, <span style="color:#e6db74">&#34;$&#34;</span>], [<span style="color:#e6db74">&#34;\\(&#34;</span>, <span style="color:#e6db74">&#34;\\)&#34;</span>]], <span style="color:#75715e">//行内公式选择符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#34;$$&#34;</span>, <span style="color:#e6db74">&#34;$$&#34;</span>], [<span style="color:#e6db74">&#34;\\[&#34;</span>, <span style="color:#e6db74">&#34;\\]&#34;</span>]], <span style="color:#75715e">//段内公式选择符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">skipTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;script&#34;</span>, <span style="color:#e6db74">&#34;noscript&#34;</span>, <span style="color:#e6db74">&#34;style&#34;</span>, <span style="color:#e6db74">&#34;textarea&#34;</span>, <span style="color:#e6db74">&#34;pre&#34;</span>, <span style="color:#e6db74">&#34;code&#34;</span>, <span style="color:#e6db74">&#34;a&#34;</span>], <span style="color:#75715e">//避开某些标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#a6e22e">ignoreClass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;class1|class2&#34;</span> <span style="color:#75715e">//避开 特定 标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;HTML-CSS&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">availableFonts</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;STIX&#34;</span>, <span style="color:#e6db74">&#34;TeX&#34;</span>], <span style="color:#75715e">//可选字体
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">showMathMenu</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">//关闭右击菜单显示
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>默认情况是对我们整个DOM进行处理的，可以传递参数来指定渲染范围(可以极大的提高渲染性能)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>window.<span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Queue</span>([<span style="color:#e6db74">&#34;Typeset&#34;</span>, <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>)]);
+</span></span></code></pre></div><p>MathJax给我们提供了部分右键菜单通过设置可以控制显示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#34;HTML-CSS&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showMathMenu</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>
+  <img src="/images/2.png" alt="加载失败" />
+默认的公式会有蓝框，我们可以通过设置样式覆盖修改样式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">蓝色的边框</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">MathJax</span>{<span style="color:#66d9ef">outline</span>:<span style="color:#ae81ff">0</span>;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">如果要改变字体大小</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">span</span>{<span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">公式太长的时候会溢出</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">MathJax_Display</span>{<span style="color:#66d9ef">overflow-x</span>:<span style="color:#66d9ef">auto</span>;<span style="color:#66d9ef">overflow-y</span>:<span style="color:#66d9ef">hidden</span>;}
+</span></span></code></pre></div><p>去掉加载信息，MathJax加载会在网页左下角看到加载情况，可以直接在MathJax.Hub.Config()里配置去掉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showProcessingMessages</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">messageStyle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;none&#34;</span>
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="更多">
+  更多
+  <a class="anchor" href="#%e6%9b%b4%e5%a4%9a">#</a>
+</h2>
+<p>更多关于tex2jax的配置<a href="http://docs.mathjax.org/en/latest/options/preprocessors/tex2jax.html">点击</a></p>
+<hr>
+<h1 id="katex-最快的公式渲染">
+  katex 最快的公式渲染
+  <a class="anchor" href="#katex-%e6%9c%80%e5%bf%ab%e7%9a%84%e5%85%ac%e5%bc%8f%e6%b8%b2%e6%9f%93">#</a>
+</h1>
+<p>katex是可汗学院推出的一种解析latex的库，具有简单的api、无依赖、高效、快速、服务器端渲染的js解析库；
+特点：</p>
+<ol>
+<li>简单的API：不依赖其它 javascript库；</li>
+<li>快速：KaTeX 是将其数学同步且不需要回流页；</li>
+<li>输出质量：KaTeX 的布局是基于 Donald Knuth 的 Tex ，数学排版的黄金标准；</li>
+<li>服务器的渲染：无论浏览器或环境如何，KaTeX 输出保持一致，因此可使用 Node.js 预渲染表达式，并将其作为纯 HTML 发送。</li>
+</ol>
+<p><font color='red'>该库只支持纯粹的latex格式的渲染，如果包含html实体、或者标签将渲染失败</font>
+<a href="https://katex.org">官网在此</a></p>
+<h2 id="引入katex">
+  引入katex
+  <a class="anchor" href="#%e5%bc%95%e5%85%a5katex">#</a>
+</h2>
+<p>1.通过cdn引入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&#34;</span> <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js&#34;</span> <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 以下是一个自动渲染的插件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js&#34;</span> <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 该defer属性 表示在页面加载之前不需要执行脚本，从而加快了页面呈现速度; 和onload属性调用 renderMathInElement一次自动渲染脚本负荷。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">renderMathInElement</span>(document.<span style="color:#a6e22e">body</span>, {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// ...options...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        });
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div><ul>
+<li>
+<p>integrity:是允许浏览器检查其获得的资源（例如从 CDN 获得的）是否被篡改的一项安全特性。具体信息请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/%E5%AD%90%E8%B5%84%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7">web 安全|MDN</a></p>
+</li>
+<li>
+<p>defer：这个布尔属性被设定用来通知浏览器该脚本将在文档完成解析后，触发 DOMContentLoaded 事件前执行。如果缺少 src 属性（即内嵌脚本），该属性不应被使用，因为这种情况下它不起作用。对动态嵌入的脚本使用 <code>async=false</code> 来达到类似的效果。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script">script|MDN</a></p>
+</li>
+<li>
+<p>crossorigin:那些没有通过标准CORS检查的正常script 元素传递最少的信息到 {domxref(&lsquo;GlobalEventHandlers.onerror&rsquo;, &lsquo;window.onerror&rsquo;)}。可以使用本属性来使那些将静态资源放在另外一个域名的站点打印错误信息。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script">script|MDN</a></p>
+</li>
+</ul>
+<p>当然还有AMD、ECMAScript module的引入具体请移步<a href="https://katex.org">官网</a>
+如果使用了前端打包工具也可以使用npm引入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">katex</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">yarn</span> <span style="color:#a6e22e">add</span> <span style="color:#a6e22e">katex</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 这样全局就会 有katex
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">katex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;katex&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 别忘了引入css
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;katex/dist/katex.min.css&#39;</span>
+</span></span></code></pre></div><h2 id="api">
+  API
+  <a class="anchor" href="#api">#</a>
+</h2>
+<h3 id="katexrender">
+  katex.render
+  <a class="anchor" href="#katexrender">#</a>
+</h3>
+<p>该方法会将公式渲染的结果返回到elemnet里</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 官方实例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">katex</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#34;c = \\pm\\sqrt{a^2 + b^2}&#34;</span>, <span style="color:#a6e22e">element</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">throwOnError</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 如果需要转义那么可以这样
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">katex</span>.<span style="color:#a6e22e">render</span>(String.<span style="color:#a6e22e">raw</span><span style="color:#e6db74">`c = \pm\sqrt{a^2 + b^2}`</span>, <span style="color:#a6e22e">element</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">throwOnError</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">请注意本地复制代码测试的时候要去掉转义字符</span>,<span style="color:#a6e22e">不然会出现错误</span>
+</span></span></code></pre></div><h3 id="katexrendertostring">
+  katex.renderToString
+  <a class="anchor" href="#katexrendertostring">#</a>
+</h3>
+<p>该渲染方法会将生成的dom结构输出到html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">katex</span>.<span style="color:#a6e22e">renderToString</span>(<span style="color:#e6db74">&#34;c = \\pm\\sqrt{a^2 + b^2}&#34;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">throwOnError</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="rendermathinelement">
+  renderMathInElement
+  <a class="anchor" href="#rendermathinelement">#</a>
+</h3>
+<p>插件的使用，引入插件的js后，会获得一个全局的函数renderMathInElement</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">renderMathInElement</span>(document.<span style="color:#a6e22e">body</span>, {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// ...options...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        });
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><p>该函数提供两个参数，第一个提供dom节点就是说会渲染该dom节点下的公式元素（尽可能的精确会提高性能），第二个参数是分隔符配置文件，将分隔符以内的字符串会进行katex渲染，配置如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// display设置为true会被渲染成块元素，false是行内元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">delimiters</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {<span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$$&#34;</span>, <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$$&#34;</span>, <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>},
+</span></span><span style="display:flex;"><span>    {<span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;\[&#34;</span>, <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;\]&#34;</span>, <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
+</span></span><span style="display:flex;"><span>    {<span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$&#34;</span>,  <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$&#34;</span>,  <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>},
+</span></span><span style="display:flex;"><span>    {<span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;\(&#34;</span>, <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;\)&#34;</span>, <span style="color:#a6e22e">display</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这些就是katex的基本api，具体的使用请参考<a href="https://katex.org">官网</a></p>
+<h2 id="总结">
+  总结
+  <a class="anchor" href="#%e6%80%bb%e7%bb%93">#</a>
+</h2>
+<p>不管是render、还是renderToString都只支持纯公式的渲染一旦包含标签或者其他不是公式的元素字符串那么就会渲染失败，而renderMathInElement插件的渲染虽然良好的支持各种标签混合的字符串处理，但是又不能支持字符串的输出。我简单的修改了下renderMathInElement的源码使之能输出DOM字符串可以直接渲染，如果你使用vue那么会很方便的使用v-html渲染，这样就解决了后端请求的时候的少量渲染，并且不会引起大量的重绘、回流。</p>
+<!-- * <a href="https://github.com/HUSTER-Qin/tal-katex">源码点这儿</a> -->
+<ul>
+<li>npm 集成<a href="https://github.com/zggz/v-katex.git">v-katex</a></li>
+</ul></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/zggz/zggz/commit/bf76c319c4757d2fdf384578d6356ebceaece734" title='Last modified by qin | April 30, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2022</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/zggz/zggz//blob/main//content/draft/katex.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是latex">什么是latex？</a></li>
+    <li><a href="#mathjax">MathJax</a>
+      <ul>
+        <li><a href="#引入mathjax">引入MathJax</a></li>
+        <li><a href="#更多">更多</a></li>
+      </ul>
+    </li>
+    <li><a href="#katex-最快的公式渲染">katex 最快的公式渲染</a>
+      <ul>
+        <li><a href="#引入katex">引入katex</a></li>
+        <li><a href="#api">API</a>
+          <ul>
+            <li><a href="#katexrender">katex.render</a></li>
+            <li><a href="#katexrendertostring">katex.renderToString</a></li>
+            <li><a href="#rendermathinelement">renderMathInElement</a></li>
+          </ul>
+        </li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
