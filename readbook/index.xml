@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>读书小计 on zggz Book</title>
-    <link>https://zggz.github.io/readbook/</link>
-    <description>Recent content in 读书小计 on zggz Book</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://zggz.github.io/readbook/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>浮生六记</title>
-      <link>https://zggz.github.io/readbook/0501/</link>
-      <pubDate>Sun, 01 May 2022 21:52:26 +0800</pubDate>
-      
-      <guid>https://zggz.github.io/readbook/0501/</guid>
-      <description>《浮生六记》- 沈复 无人与我立黄昏，无人问我粥可温。 无人与我捻熄灯，无人共我书半生。 无人陪我夜已深，无</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>读书小计 on zggz Book</title><link>https://zggz.github.io/readbook/</link><description>Recent content in 读书小计 on zggz Book</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://zggz.github.io/readbook/index.xml" rel="self" type="application/rss+xml"/><item><title>浮生六记</title><link>https://zggz.github.io/readbook/0501/</link><pubDate>Sun, 01 May 2022 21:52:26 +0800</pubDate><guid>https://zggz.github.io/readbook/0501/</guid><description>《浮生六记》- 沈复 无人与我立黄昏，无人问我粥可温。 无人与我捻熄灯，无人共我书半生。 无人陪我夜已深，无</description></item></channel></rss>
