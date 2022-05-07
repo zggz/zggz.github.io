@@ -5,23 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Record&lt;Keys, Type&gt; #   官方文档
 定义一个对象的key和value类型
-构造一个对象类型，其属性键为Keys，其属性值为Type。 此实用程序可用于将一种类型的属性映射到另一种类。">
+构造一个对象类型，其属性键为Keys，其属性值为Type。 此实用程序可用于将一种类型的属性映射到另一种类。
+接口 #  1// 定义 2// type Record&lt;K extends keyof any, T&gt; = { 3// [P in K]: T; 4// }; 5interface Person { 6 age: number 7 name: string 8} 9type School = &#39;student&#39; | &#39;teacher&#39; 10const school: Record&lt;School, Person&gt; = { 11 student: { 12 name: &#39;tom&#39;, 13 age: 12 14 }, 15 teacher:{ 16 name: &#39;sam&#39;, 17 age:20 18 } 19} 基础类型 #  1type Num = &#34;one&#34; | &#34;two&#34; 2 3const num: Record&lt;Num, number&gt; = { 4 one:1, 5 two:2 6} ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Record" />
 <meta property="og:description" content="Record&lt;Keys, Type&gt; #   官方文档
 定义一个对象的key和value类型
-构造一个对象类型，其属性键为Keys，其属性值为Type。 此实用程序可用于将一种类型的属性映射到另一种类。" />
+构造一个对象类型，其属性键为Keys，其属性值为Type。 此实用程序可用于将一种类型的属性映射到另一种类。
+接口 #  1// 定义 2// type Record&lt;K extends keyof any, T&gt; = { 3// [P in K]: T; 4// }; 5interface Person { 6 age: number 7 name: string 8} 9type School = &#39;student&#39; | &#39;teacher&#39; 10const school: Record&lt;School, Person&gt; = { 11 student: { 12 name: &#39;tom&#39;, 13 age: 12 14 }, 15 teacher:{ 16 name: &#39;sam&#39;, 17 age:20 18 } 19} 基础类型 #  1type Num = &#34;one&#34; | &#34;two&#34; 2 3const num: Record&lt;Num, number&gt; = { 4 one:1, 5 two:2 6} " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zggz.github.io/docs/notes/typescript/record/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-04-30T14:40:49+08:00" />
-<meta property="article:modified_time" content="2022-05-07T21:10:42+08:00" />
+<meta property="article:modified_time" content="2022-05-07T22:53:32+08:00" />
 
 <title>Record | zggz Book</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.abeba6a00042c15cc97eb9e107437b2be8924850821cd191ccfcdbab740fabbf.js" integrity="sha256-q&#43;umoABCwVzJfrnhB0N7K&#43;iSSFCCHNGRzPzbq3QPq78=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2475078a0bbf380e43e2785df02b4a1d36e6793a1352b2a08ce63e482cb6f72d.js" integrity="sha256-JHUHigu/OA5D4nhd8CtKHTbmeToTUrKgjOY&#43;SCy29y0=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -151,6 +153,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/notes/typescript/extends/" class="">Extends</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/notes/typescript/record/" class="active">Record</a>
   
 
@@ -268,9 +283,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>
-  <img src="https://zggz.github.io/post-images/hello-gridea.png" alt="RUNOOB 图标" /></p>
-<h1 id="recordkeys-type">
+  <article class="markdown"><h1 id="recordkeys-type">
   Record&lt;Keys, Type&gt;
   <a class="anchor" href="#recordkeys-type">#</a>
 </h1>
@@ -321,7 +334,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/zggz/zggz/commit/e579fa0e7979fa27432c0bb745b7d068a979a0c0" title='Last modified by qin | May 7, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/zggz/zggz/commit/0645dfbe514b0757345d7020cdf30948be8d690a" title='Last modified by qin | May 7, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>May 7, 2022</span>
     </a>
