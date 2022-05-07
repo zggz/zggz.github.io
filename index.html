@@ -16,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.2475078a0bbf380e43e2785df02b4a1d36e6793a1352b2a08ce63e482cb6f72d.js" integrity="sha256-JHUHigu/OA5D4nhd8CtKHTbmeToTUrKgjOY&#43;SCy29y0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.05c511d76fd3d73c9ef7ccf332e7c88dfd9a4a2dc4eb1e360795489661a5a29c.js" integrity="sha256-BcUR12/T1zye98zzMufIjf2aSi3E6x42B5VIlmGlopw=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://zggz.github.io/index.xml" title="zggz Book" />
@@ -341,9 +341,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p>extends #   官方文档
-接口继承和类型判断
-继承扩展 #  1interface Person{ 2 name: string 3} 4 5interface Sudent extends Person{ 6 age: number 7} 8// Student =&gt; {name: string ge:number} 泛型约束 #   在使用泛型的时候，可以通过extends来对类型参数的限制； 以下的案例可以限制obj传入的对象必须包含name字段  1function getName&lt;T extends {name:string}, K extends keyof T&gt;(obj:T, key:K){ 2 return obj[key] 3} 条件判断 #   当extends和type一起使用的时候，会作为条件判断 如果extends前面的类型能够赋值给extends后面的类型，那么表达式判断为真，否则为假。 extends前面的类型一定包含后一个类型  1interface Point{ 2 x: number 3 y: number 4} 5interface PointY{ 6 y:number 7} 8type P = Point extends PointY ?
+  <p>extends # 官方文档 接口继承和类型判断 继承扩展 # 1interface Person{ 2 name: string 3} 4 5interface Sudent extends Person{ 6 age: number 7} 8// Student =&gt; {name: string ge:number} 泛型约束 # 在使用泛
     <a href="/docs/notes/typescript/extends/">...</a>
     
   </p>
@@ -372,10 +370,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p>Record&lt;Keys, Type&gt; #   官方文档
-定义一个对象的key和value类型
-构造一个对象类型，其属性键为Keys，其属性值为Type。 此实用程序可用于将一种类型的属性映射到另一种类。
-接口 #  1// 定义 2// type Record&lt;K extends keyof any, T&gt; = { 3// [P in K]: T; 4// }; 5interface Person { 6 age: number 7 name: string 8} 9type School = &#39;student&#39; | &#39;teacher&#39; 10const school: Record&lt;School, Person&gt; = { 11 student: { 12 name: &#39;tom&#39;, 13 age: 12 14 }, 15 teacher:{ 16 name: &#39;sam&#39;, 17 age:20 18 } 19} 基础类型 #  1type Num = &#34;one&#34; | &#34;two&#34; 2 3const num: Record&lt;Num, number&gt; = { 4 one:1, 5 two:2 6} 
+  <p>Record&lt;Keys, Type&gt; # 官方文档 定义一个对象的key和value类型 构造一个对象类型，其属性键为Keys，其属性值为T
+    <a href="/docs/notes/typescript/record/">...</a>
+    
   </p>
 </article>
 
@@ -402,8 +399,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p>keyof #  该操作符用于获取某种类型的所有键,其返回的类型是联合类型
-获取类型 #  1interface Ponit{ 2 x:number 3 y:number 4} 5 6type P = keyof Ponit // &#39;x&#39; | &#39;y&#39; 索引签名 #  1type Arrayish = { 2 [n:number]: unknown 3} 4type A = keyof Arrayish // number 常用场景 #  定义一个函数，通过key来获取对象的值，通常我们并不知道对象包含的key集合
+  <p>keyof # 该操作符用于获取某种类型的所有键,其返回的类型是联合类型 获取类型 # 1interface Ponit{ 2 x:number 3 y:number 4} 5 6type P = keyof Ponit // &#39;x&#39;
     <a href="/docs/notes/typescript/keyof/">...</a>
     
   </p>
@@ -411,7 +407,7 @@ https://github.com/alex-shpak/hugo-book
 
 <article class="markdown book-post">
   <h2>
-    <a href="/readbook/0501/">记-浮生六记</a>
+    <a href="/readbook/0501/">浮生六记</a>
   </h2>
   
   <h5>May 1, 2022</h5>
@@ -432,15 +428,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p>《浮生六记》- 沈复
-无人与我立黄昏，无人问我粥可温。
-无人与我捻熄灯，无人共我书半生。
-无人陪我夜已深，无人与我把酒分。
-无人拭我相思泪，无人梦我与前尘。
-无人陪我顾星辰，无人醒我茶已冷。
-无人听我述衷肠，无人解我心头梦。
-无人拘我言中泪，无人愁我独行路。
-回首向来萧瑟处，无人等在灯火阑珊处。
+  <p>《浮生六记》- 沈复 无人与我立黄昏，无人问我粥可温。 无人与我捻熄灯，无人共我书半生。 无人陪我夜已深，无
+    <a href="/readbook/0501/">...</a>
+    
   </p>
 </article>
 
@@ -467,7 +457,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p> 本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) 1git remote update origin --prune  error: failed to push some refs to 1git pull --rebase origin master 2git push -u origin master  拉取git子模块 1git submodule update --init --force   
+  <p>本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) 1git remote update origin --prune error: failed to push some refs to 1git pull --rebase origin master 2git
+    <a href="/docs/notes/tools/git/">...</a>
+    
   </p>
 </article>
 
@@ -494,8 +486,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <p>主要记录 vim 使用过程中的快捷键
-输入模式 #   i 切换输入模式 a 光标后插入 A 光标行尾插入 i 光标前插入 I 光标行首插入 o 打开向下打开新行 O 打开向上打开新行  退出模式 #   esc  保存 #   w wq wq！ q!
+  <p>主要记录 vim 使用过程中的快捷键 输入模式 # i 切换输入模式 a 光标后插入 A 光标行尾插入 i 光标前插入 I 光标行首
     <a href="/docs/notes/tools/vim/">...</a>
     
   </p>

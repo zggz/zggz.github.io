@@ -12,7 +12,7 @@
       <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
       
       <guid>https://zggz.github.io/docs/notes/tools/git/</guid>
-      <description> 本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) 1git remote update origin --prune  error: failed to push some refs to 1git pull --rebase origin master 2git push -u origin master  拉取git子模块 1git submodule update --init --force   </description>
+      <description>本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) 1git remote update origin --prune error: failed to push some refs to 1git pull --rebase origin master 2git</description>
     </item>
     
   </channel>
