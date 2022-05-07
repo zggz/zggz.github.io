@@ -5,27 +5,5 @@
     <link>https://zggz.github.io/docs/notes/</link>
     <description>Recent content in 一些杂记 on zggz Book</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://zggz.github.io/docs/notes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>vim常用命令</title>
-      <link>https://zggz.github.io/docs/notes/vim/</link>
-      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/docs/notes/vim/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;
-  Introduction
-  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;主要记录vim使用过程中的快捷键&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zggz.github.io/docs/notes/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/docs/notes/git/</guid>
-      <description> 本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) git remote update origin --prune  error: failed to push some refs to git pull --rebase origin master git push -u origin master  拉取git子模块 git submodule update --init --force   </description>
-    </item>
-    
   </channel>
 </rss>

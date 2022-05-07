@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>zggz Book</title>
+    <title>Docs on zggz Book</title>
     <link>https://zggz.github.io/docs/</link>
-    <description>Recent content on zggz Book</description>
+    <description>Recent content in Docs on zggz Book</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 19 Nov 2020 00:18:12 +0000</lastBuildDate><atom:link href="https://zggz.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 May 2022 15:56:35 +0800</lastBuildDate><atom:link href="https://zggz.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -5,13 +5,31 @@
     <link>https://zggz.github.io/tags/</link>
     <description>Recent content in Tags on zggz Book</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Nov 2020 18:14:05 +0000</lastBuildDate><atom:link href="https://zggz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 May 2022 15:56:35 +0800</lastBuildDate><atom:link href="https://zggz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JavaScript</title>
-      <link>https://zggz.github.io/tags/JavaScript/</link>
-      <pubDate>Wed, 25 Nov 2020 18:14:05 +0000</pubDate>
+      <title>typescript</title>
+      <link>https://zggz.github.io/tags/typescript/</link>
+      <pubDate>Sat, 07 May 2022 15:56:35 +0800</pubDate>
       
-      <guid>https://zggz.github.io/tags/JavaScript/</guid>
+      <guid>https://zggz.github.io/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网文</title>
+      <link>https://zggz.github.io/tags/%E7%BD%91%E6%96%87/</link>
+      <pubDate>Sun, 01 May 2022 21:52:26 +0800</pubDate>
+      
+      <guid>https://zggz.github.io/tags/%E7%BD%91%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://zggz.github.io/tags/git/</link>
+      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
+      
+      <guid>https://zggz.github.io/tags/git/</guid>
       <description></description>
     </item>
     
@@ -21,87 +39,6 @@
       <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
       
       <guid>https://zggz.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>浏览器</title>
-      <link>https://zggz.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
-      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>网络</title>
-      <link>https://zggz.github.io/tags/%E7%BD%91%E7%BB%9C/</link>
-      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/%E7%BD%91%E7%BB%9C/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>面试</title>
-      <link>https://zggz.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
-      <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>设计模式</title>
-      <link>https://zggz.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Tue, 06 Oct 2020 11:47:42 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>katex</title>
-      <link>https://zggz.github.io/tags/katex/</link>
-      <pubDate>Tue, 26 Feb 2019 23:28:00 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/katex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MathJax</title>
-      <link>https://zggz.github.io/tags/MathJax/</link>
-      <pubDate>Tue, 26 Feb 2019 23:28:00 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/MathJax/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>性能</title>
-      <link>https://zggz.github.io/tags/%E6%80%A7%E8%83%BD/</link>
-      <pubDate>Wed, 06 Feb 2019 11:17:51 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/%E6%80%A7%E8%83%BD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://zggz.github.io/tags/github/</link>
-      <pubDate>Sat, 02 Feb 2019 01:49:08 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ssh</title>
-      <link>https://zggz.github.io/tags/ssh/</link>
-      <pubDate>Sat, 02 Feb 2019 01:49:08 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     

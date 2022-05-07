@@ -5,20 +5,7 @@
     <link>https://zggz.github.io/tags/JavaScript/</link>
     <description>Recent content in JavaScript on zggz Book</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Nov 2020 18:14:05 +0000</lastBuildDate><atom:link href="https://zggz.github.io/tags/JavaScript/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>浏览器渲染</title>
-      <link>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</link>
-      <pubDate>Wed, 25 Nov 2020 18:14:05 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/draft/readbook/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;
-  Introduction
-  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;主要描述浏览器的渲染&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Thu, 19 Nov 2020 00:18:12 +0000</lastBuildDate><atom:link href="https://zggz.github.io/tags/JavaScript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>高性能JavaScript</title>
       <link>https://zggz.github.io/draft/high-javascript/</link>
@@ -26,20 +13,6 @@
       
       <guid>https://zggz.github.io/draft/high-javascript/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>函数式编程</title>
-      <link>https://zggz.github.io/draft/readbook/function/</link>
-      <pubDate>Thu, 25 Jun 2020 12:31:44 +0000</pubDate>
-      
-      <guid>https://zggz.github.io/draft/readbook/function/</guid>
-      <description>&lt;h1 id=&#34;函数式编程&#34;&gt;
-  函数式编程
-  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%87%bd%e6%95%b0%e5%bc%8f%e7%bc%96%e7%a8%8b&#34;&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;使用函数来抽象作用在数据之上的控制流与操作，从而在系统中消除副作用并减少对状态的改变
-函数式编程指创建不可变的程序，通过消除外部可见的副作用，来对纯函数的声明式的求值过程&lt;/p&gt;</description>
     </item>
     
     <item>
