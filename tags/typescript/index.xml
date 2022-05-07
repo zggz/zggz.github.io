@@ -25,7 +25,7 @@
       <guid>https://zggz.github.io/docs/notes/typescript/keyof/</guid>
       <description>keyof #   官方文档
 该操作符用于获取某种类型的所有键,其返回的类型是联合类型
-获取类型 #  interface Ponit{  x:number  y:number }  type P = keyof Ponit // &amp;#39;x&amp;#39; | &amp;#39;y&amp;#39; 索引签名 #  type Arrayish = {  [n:number]: unknown } type A = keyof Arrayish // number 常用场景 #  定义一个函数，通过key来获取对象的值，通常我们并不知道对象包含的key集合</description>
+获取类型 #  1interface Ponit{ 2 x:number 3 y:number 4} 5 6type P = keyof Ponit // &amp;#39;x&amp;#39; | &amp;#39;y&amp;#39; 索引签名 #  1type Arrayish = { 2 [n:number]: unknown 3} 4type A = keyof Arrayish // number 常用场景 #  定义一个函数，通过key来获取对象的值，通常我们并不知道对象包含的key集合</description>
     </item>
     
   </channel>

@@ -11,7 +11,7 @@
       <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
       
       <guid>https://zggz.github.io/docs/notes/tools/git/</guid>
-      <description> 本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) git remote update origin --prune  error: failed to push some refs to git pull --rebase origin master git push -u origin master  拉取git子模块 git submodule update --init --force   </description>
+      <description> 本地与远程的分支列表不一致(在gitlab管理界面删除分支之后) 1git remote update origin --prune  error: failed to push some refs to 1git pull --rebase origin master 2git push -u origin master  拉取git子模块 1git submodule update --init --force   </description>
     </item>
     
     <item>
@@ -20,8 +20,8 @@
       <pubDate>Thu, 19 Nov 2020 00:18:12 +0000</pubDate>
       
       <guid>https://zggz.github.io/docs/notes/tools/vim/</guid>
-      <description>主要记录vim使用过程中的快捷键
-输入模式 #   i 切换输入模式 a 光标后插入 A 光标行尾插入 i 光标前插入 I 光标行首插入 o 打开向下打开新行 O 打开向上打开新行  esc #   退出模式  保存 #   w wq wq！ q!</description>
+      <description>主要记录 vim 使用过程中的快捷键
+输入模式 #   i 切换输入模式 a 光标后插入 A 光标行尾插入 i 光标前插入 I 光标行首插入 o 打开向下打开新行 O 打开向上打开新行  退出模式 #   esc  保存 #   w wq wq！ q!</description>
     </item>
     
   </channel>
